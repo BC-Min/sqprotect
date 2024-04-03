@@ -5,4 +5,9 @@
     <select id="logged" resultType="sqproject.mbc.vo.MemberVo">
         selcet * from member where mid = '#{mId}'
     </select>
+
+    <insert id="save" parameterType="sqproject.mbc.vo.MemberVo">
+        insert into member
+        values (member_seq.NEXTVAL , #{mId}, #{mPw}, #{mName}, #{mBirth}, #{mNum}, #{roles})
+    </insert>
 </mapper>
