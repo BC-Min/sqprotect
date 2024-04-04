@@ -47,27 +47,32 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="mId">ID</label>
-                        <input type="text" id="mId" class="form-control" placeholder="아이디를 입력하세요">
+<!--                        <input type="text" id="mId" class="form-control" placeholder="아이디를 입력하세요">-->
+                        <input type="text" id="mId" th:field="*{mId}" class="form-control" placeholder="아이디를 입력하세요">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="mName">이름</label>
-                        <input type="text" id="mName" class="form-control" placeholder="이름을 입력하세요">
+<!--                        <input type="text" id="mName" class="form-control" placeholder="이름을 입력하세요">-->
+                        <input type="text" id="mName" th:field="*{mName}" class="form-control" placeholder="이름을 입력하세요">
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="mPw">비밀번호</label>
-                    <input type="password" id="mPw" class="form-control" placeholder="비밀번호를 입력하세요">
+<!--                    <input type="password" id="mPw" class="form-control" placeholder="비밀번호를 입력하세요">-->
+                    <input type="password" id="mPw" th:field="*{mPw}" class="form-control" placeholder="비밀번호를 입력하세요">
                 </div>
 
                 <div class="mb-3">
                     <label for="mBirth">생일</label>
-                    <input type="date" id="mBirth" class="form-control" placeholder="생년월일을 입력하세요">
+<!--                    <input type="date" id="mBirth" class="form-control" placeholder="생년월일을 입력하세요">-->
+                    <input type="date" id="mBirth" th:field="*{mBirth}" class="form-control" placeholder="생년월일을 입력하세요">
                 </div>
 
                 <div class="mb-3">
                     <label for="mNum">전화번호</label>
-                    <input type="text" id="mNum" class="form-control" placeholder="전화번호를 입력하세요">
+<!--                    <input type="text" id="mNum" class="form-control" placeholder="전화번호를 입력하세요">-->
+                    <input type="text" th:field="*{mNum}" id="mNum" class="form-control" placeholder="전화번호를 입력하세요">
                 </div>
 
                 <div class="mb-4"></div>

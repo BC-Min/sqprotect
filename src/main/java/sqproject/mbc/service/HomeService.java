@@ -1,4 +1,4 @@
-package sqproject.mbc.security;
+package sqproject.mbc.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -39,13 +39,16 @@ public class HomeService {
     }
 
     public Optional<MemberVo> findOne(String insertedUserId) {
+        log.info("insertedUserId====" +insertedUserId);
         Optional<MemberVo> findOne = homedao.findOne(insertedUserId);
+        log.info("findeone list? =" + findOne);
         return findOne;
     }
 
 
     public List<MemberVo> findAll(){
         List<MemberVo> memberList = homedao.findAll();
+        log.info("findeone list? =" + memberList);
         return memberList;
     }
 }

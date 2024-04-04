@@ -2,13 +2,14 @@ package sqproject.mbc.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import sqproject.mbc.security.HomeService;
+import sqproject.mbc.service.HomeService;
 import sqproject.mbc.vo.MemberVo;
 
 import java.util.HashMap;
@@ -19,8 +20,7 @@ import java.util.Map;
 @Slf4j
 public class HomeController {
 
-    @Autowired
-    HomeService homeservice;
+    private final HomeService homeservice;
 
     //test
     @GetMapping("status")
@@ -38,23 +38,16 @@ public class HomeController {
 
     //인덱스
     @GetMapping("/index")
-    public String home(){
-        return "index";
-    }
-    
-    //로그인 성공시
-    @PostMapping("/logged")
-    public String logged(@RequestParam Model model){
-
-        boolean isValidMember =  homeservice.logged(model);
-        if(isValidMember)
-            return "/view/login";
+    public String home(@AuthenticationPrincipal User user, Model model){
+        log.info("anth Id = {}", user.getUsername());
         return "index";
     }
 
     //회원가입
     @GetMapping("/signup")
-    public String signup(){
+    public String signup(Model model){
+        model.addAttribute("memberVo", new MemberVo());//th:field 쓰려면 Vo의 빈 객체를 넘겨줘야 함.
+
         return "view/signup";
     }
 

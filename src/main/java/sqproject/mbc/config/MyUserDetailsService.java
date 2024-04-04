@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
-import sqproject.mbc.security.HomeService;
+import sqproject.mbc.service.HomeService;
 import sqproject.mbc.vo.MemberVo;
 
 import java.util.Optional;
@@ -22,6 +22,7 @@ public class MyUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String insertedUserId) throws UsernameNotFoundException {
         log.info("login loadUserByUsername = {}", insertedUserId);
         Optional<MemberVo> findOne = homeservice.findOne(insertedUserId);
+        log.info("login username={}", findOne);
         MemberVo member = findOne.orElseThrow(() -> new UsernameNotFoundException("없는 회원입니다 ㅠ"));
         log.info("findOne = {}", member);
 
