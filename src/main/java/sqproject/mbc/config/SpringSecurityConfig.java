@@ -39,7 +39,13 @@ public class SpringSecurityConfig {
                         .passwordParameter("password")
                         .permitAll()	// 대시보드 이동이 막히면 안되므로 얘는 허용
                 )
-                .logout(withDefaults());	// 로그아웃은 기본설정으로 (/logout으로 인증해제)
+                .logout(logout -> {logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessHandler(((request, response, authentication) -> {
+                            response.sendRedirect("/");
+                        })).deleteCookies();
+
+                });	// 로그아웃은 기본설정으로 (/logout으로 인증해제)
 
         return http.build();
     }

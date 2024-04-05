@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
     <title>Freelancer - Start Bootstrap Theme</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" th:href="@{../static/assets/favicon.ico}"/>
+    <link rel="icon" type="image/x-icon" th:href="@{../static/assets/favicon.ico}" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
-    <script src="@{/js/order.js}"></script>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
 <body id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="#page-top">Start MBC</a>
-        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">INTRODUCE</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Skills</a>
-                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">INTRODUCE</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Skills</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a sec:authorize="hasRole('USER')" class="nav-link py-3 px-0 px-lg-3 rounded" href="/logout">LOGOUT</a></li>
             </ul>
         </div>
@@ -44,7 +38,7 @@
 <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
-        <img class="masthead-avatar mb-5" th:src="@{assets/img/avataaars.svg}" alt="..."/>
+        <img class="masthead-avatar mb-5" th:src="@{assets/img/avataaars.svg}" alt="..." />
         <!-- Masthead Heading-->
         <h1 class="masthead-heading text-uppercase mb-0">MBC`s Portfolio</h1>
         <!-- Icon Divider-->
@@ -72,60 +66,54 @@
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" th:src="@{/assets/img/portfolio/cabin.png}" alt="..."/>
+                    <img class="img-fluid" th:src="@{/assets/img/portfolio/cabin.png}" alt="..." />
                 </div>
             </div>
             <!-- Portfolio 사용스킬-->
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" th:src="@{assets/img/portfolio/cake.png}" alt="..."/>
+                    <img class="img-fluid" th:src="@{assets/img/portfolio/cake.png}" alt="..." />
                 </div>
             </div>
             <!-- Portfolio github-->
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" th:src="@{assets/img/portfolio/circus.png}" alt="..."/>
+                    <img class="img-fluid" th:src="@{assets/img/portfolio/circus.png}" alt="..." />
                 </div>
             </div>
             <!-- Portfolio 카페메뉴 주문하기-->
             <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
                 <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" th:src="@{assets/img/portfolio/game.png}" alt="..."/>
+                    <img class="img-fluid" th:src="@{assets/img/portfolio/game.png}" alt="..." />
                 </div>
             </div>
             <!-- Portfolio 페이지2-->
             <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
                 <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" th:src="@{assets/img/portfolio/safe.png}" alt="..."/>
+                    <img class="img-fluid" th:src="@{assets/img/portfolio/safe.png}" alt="..." />
                 </div>
             </div>
             <!-- Portfolio 페이지3-->
             <div class="col-md-6 col-lg-4">
                 <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" th:src="@{assets/img/portfolio/submarine.png}" alt="..."/>
+                    <img class="img-fluid" th:src="@{assets/img/portfolio/submarine.png}" alt="..." />
                 </div>
             </div>
         </div>
@@ -164,7 +152,7 @@
                 <h4 class="text-uppercase mb-4">Location</h4>
                 <p class="lead mb-0">
                     164, Gosanja-ro, Seongdong-gu
-                    <br/>
+                    <br />
                     Seoul, Republic of Korea
                 </p>
             </div>
@@ -185,13 +173,10 @@
 </div>
 <!-- Portfolio Modals-->
 <!-- Portfolio Modal 1-->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1"
-     aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header border-0">
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
             <div class="modal-body text-center pb-5">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -205,7 +190,7 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/cabin.png}" alt="..."/>
+                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/cabin.png}" alt="..." />
                             <!-- Portfolio Modal - Text-->
                             <table class="table">
                                 <thead>
@@ -215,7 +200,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td rowspan="5"> 사진</td>
+                                    <td rowspan="5"> 사진 </td>
                                     <td class="fs-5">이름</td>
                                     <td class="fs-5">민병철</td>
                                     <td class="fs-5">한자</td>
@@ -241,11 +226,11 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <button class="btn btn-primary" onclick="window.location.href='index'">
+                            <button class="btn btn-primary" onclick="window.location.href='index.html'">
                                 Resume Page
                             </button>
                             <!--                                     <a href="xx.pdf" download>-->
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" >
                                 Resume Download
                             </button>
                             <!--                                     </a>-->
@@ -261,20 +246,16 @@
     </div>
 </div>
 <!-- Portfolio Modal 2-->
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2"
-     aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header border-0">
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
             <div class="modal-body text-center pb-5">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <!-- Portfolio Modal - Title-->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Technology of
-                                Possession</h2>
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Technology of Possession</h2>
                             <!-- Icon Divider-->
                             <div class="divider-custom">
                                 <div class="divider-custom-line"></div>
@@ -282,7 +263,7 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/cake.png}" alt="..."/>
+                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/cake.png}" alt="..." />
                             <!-- Portfolio Modal - Text-->
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
@@ -296,13 +277,10 @@
     </div>
 </div>
 <!-- Portfolio Modal 3-->
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3"
-     aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header border-0">
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
             <div class="modal-body text-center pb-5">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -316,12 +294,11 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/circus.png}" alt="..."/>
+                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/circus.png}" alt="..." />
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4">해당 사이트를 만든 코드가 있는 깃허브로 이동합니다.</p>
 
-                            <button class="btn btn-primary"
-                                    onclick="window.location.href='https://github.com/BC-Min/sqprotect'">
+                            <button class="btn btn-primary" onclick="window.location.href='https://github.com/BC-Min/sqprotect'">
                                 Go to GitHub
                             </button>
                             <!--                                     </a>-->
@@ -337,49 +314,26 @@
     </div>
 </div>
 <!-- Portfolio 카페메뉴-->
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4"
-     aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header border-0">
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
             <div class="modal-body text-center pb-5">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <!-- Portfolio Modal - Title-->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">메뉴 주문</h2>
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
                             <!-- Icon Divider-->
                             <div class="divider-custom">
                                 <div class="divider-custom-line"></div>
                                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-                            <!-- 메뉴리스트-->
-                            <table class="table table-borderless">
-                                <thead>
-                                    <tr>
-                                        <th>메뉴명</th>
-                                        <th>가격</th>
-                                        <th>수량</th>
-                                        <th>주문</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <!--- 데이터 출력 부분 -->
-                                    <tr th:each="prod : ${list}">
-                                        <td th:text="${prod.menuname}">메뉴명</td>
-                                        <td th:text="${#numbers.formatInteger(prod.menuprice, 0, 'COMMA')}">가격</td>
-                                        <td><input type="number" min="1" value="1"  style="border: none; outline: none; text-align:center;"></td>
-                                        <td><button type="button" class="btn btn-warning" onclick="cartadd(event)">담기</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!-- 장바구니로 / 닫기 버튼-->
-                            <button class="btn btn-primary" onclick="window.location.href='order'">
-                                Go to the OrderPage
-                            </button>
+                            <!-- Portfolio Modal - Image-->
+                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/game.png}" alt="..." />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 Close Window
@@ -392,13 +346,10 @@
     </div>
 </div>
 <!-- Portfolio Modal 5-->
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5"
-     aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header border-0">
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
             <div class="modal-body text-center pb-5">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -412,11 +363,9 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/safe.png}" alt="..."/>
+                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/safe.png}" alt="..." />
                             <!-- Portfolio Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit
-                                asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 Close Window
@@ -429,13 +378,10 @@
     </div>
 </div>
 <!-- Portfolio Modal 6-->
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6"
-     aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header border-0">
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
             <div class="modal-body text-center pb-5">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -449,12 +395,9 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/submarine.png}"
-                                 alt="..."/>
+                            <img class="img-fluid rounded mb-5" th:src="@{assets/img/portfolio/submarine.png}" alt="..." />
                             <!-- Portfolio Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit
-                                asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 Close Window

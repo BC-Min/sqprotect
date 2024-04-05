@@ -9,10 +9,13 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import sqproject.mbc.service.CoffeeService;
 import sqproject.mbc.service.HomeService;
+import sqproject.mbc.vo.CoffeeVo;
 import sqproject.mbc.vo.MemberVo;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -21,6 +24,7 @@ import java.util.Map;
 public class HomeController {
 
     private final HomeService homeservice;
+    private final CoffeeService coffeservice;
 
     //test
     @GetMapping("status")
@@ -40,6 +44,10 @@ public class HomeController {
     @GetMapping("/index")
     public String home(@AuthenticationPrincipal User user, Model model){
         log.info("anth Id = {}", user.getUsername());
+        List<CoffeeVo> coffeelist = coffeservice.coffeelist();
+        log.info("coffeemenulist = {}", coffeelist);
+
+        model.addAttribute("list", coffeelist);
         return "index";
     }
 
