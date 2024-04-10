@@ -16,7 +16,17 @@
           type="text/css"/>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link th:href="@{/css/styles.css}" rel="stylesheet"/>
-    <script src="@{/js/order.js}"></script>
+    <script>
+        function cartadd(event) {
+            let row = event.target.closest("tr");
+            let ordermenu = row.querySelector("td:nth-child(1)").textContent;
+            let orderprice = row.querySelector("td:nth-child(2)").textContent.replace(/[^0-9]/g, '');
+            let orderqunt = row.querySelector("td:nth-child(3) input").value;
+            let confirmation = confirm(ordermenu+"를 담았습니다. 장바구니로 이동하시겠습니까?");
+
+            window.location.href = "/cart?orderid=aa1&ordermenu="+ordermenu+"&orderprice="+orderprice+"&orderqunt="+orderqunt+"&confirmation="+confirmation;
+        }
+    </script>
 </head>
 <body id="page-top">
 <!-- Navigation-->

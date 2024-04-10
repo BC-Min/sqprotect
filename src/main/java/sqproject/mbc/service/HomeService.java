@@ -17,7 +17,6 @@ public class HomeService {
     private final PasswordEncoder passwordEncoder;
     private final HomeDao homedao; // Autowired 대신?
     public HomeService(PasswordEncoder passwordEncoder, HomeDao homedao) {
-//    public HomeService(HomeDao homedao) {
         this.passwordEncoder = passwordEncoder;
         this.homedao = homedao;
     }

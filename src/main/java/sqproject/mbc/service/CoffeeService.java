@@ -24,6 +24,11 @@ public class CoffeeService {
     }
 
     public void docartadd(CoffeeVo coffeevo) {
+        coffeedao.cartadd(coffeevo);
+    }
 
+    public List<CoffeeVo> doorderlist(String orderid) {
+        List<CoffeeVo> list = coffeedao.orderlist(orderid);
+        return list;
     }
 }

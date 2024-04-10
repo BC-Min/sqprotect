@@ -7,4 +7,17 @@
         SELECT * FROM coffee_menu
     </select>
 
+    <!--장바구니입력-->
+    <insert id="cartadd" parameterType="sqproject.mbc.vo.CoffeeVo">
+        insert into coffeecart(CARTID, CARTMENU, CARTPRICE, CARTQUNT)
+        values (#{orderid}, #{menuname}, #{menuprice}, #{menuqunt})
+    </insert>
+
+    <!--장바구니-->
+    <select id="orderlist" parameterType="String" resultType="sqproject.mbc.vo.CoffeeVo">
+        SELECT cartid as orderid, cartmenu as ordermenu, cartprice as orderprice, SUM(cartqunt) AS orderqunt
+        FROM COFFEECART
+        where CARTID = #{orderid}
+        GROUP BY cartid, cartmenu, cartprice
+    </select>
 </mapper>

@@ -24,7 +24,7 @@ import java.util.Map;
 public class HomeController {
 
     private final HomeService homeservice;
-    private final CoffeeService coffeservice;
+    private final CoffeeService coffeeservice;
 
     //test
     @GetMapping("status")
@@ -44,7 +44,7 @@ public class HomeController {
     @GetMapping("/index")
     public String home(@AuthenticationPrincipal User user, Model model){
         log.info("anth name = {}", user.getUsername());
-        List<CoffeeVo> coffeelist = coffeservice.coffeelist();
+        List<CoffeeVo> coffeelist = coffeeservice.coffeelist();
         log.info("coffeemenulist = {}", coffeelist);
 
         model.addAttribute("list", coffeelist);
