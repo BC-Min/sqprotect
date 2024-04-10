@@ -27,7 +27,7 @@ public class MyUserDetailsService implements UserDetailsService {
         log.info("findOne = {}", member);
 
         return User.builder()
-                .username(member.getMName())
+                .username(member.getMId())
                 .password(member.getMPw())
                 .roles(member.getRoles())
                 .build();

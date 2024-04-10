@@ -43,7 +43,7 @@ public class HomeController {
     //인덱스
     @GetMapping("/index")
     public String home(@AuthenticationPrincipal User user, Model model){
-        log.info("anth Id = {}", user.getUsername());
+        log.info("anth name = {}", user.getUsername());
         List<CoffeeVo> coffeelist = coffeservice.coffeelist();
         log.info("coffeemenulist = {}", coffeelist);
 
