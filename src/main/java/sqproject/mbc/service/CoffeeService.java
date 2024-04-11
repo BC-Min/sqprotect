@@ -31,4 +31,8 @@ public class CoffeeService {
         List<CoffeeVo> list = coffeedao.orderlist(orderid);
         return list;
     }
+
+    public void doordernoinput(List<CoffeeVo> orderlist, String orderno) {
+            // 여기까지 작업함
+    }
 }

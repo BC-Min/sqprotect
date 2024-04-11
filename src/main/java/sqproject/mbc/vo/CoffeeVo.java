@@ -13,5 +13,6 @@ public class CoffeeVo {
     private String menuqunt;
     private String menudesc;
     private String menualg;
+    private String orderno;
 
 }

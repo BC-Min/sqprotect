@@ -10,7 +10,7 @@ import java.util.List;
 public interface CoffeeDao {
     List<CoffeeVo> coffeelist();
 
-    void cartadd(CoffeeVo coffeevo);
+    void cartadd(@RequestParam CoffeeVo coffeevo);
 
     List<CoffeeVo> orderlist(@RequestParam String orderid);
 }

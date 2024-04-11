@@ -24,7 +24,8 @@
             let orderqunt = row.querySelector("td:nth-child(3) input").value;
             let confirmation = confirm(ordermenu+"를 담았습니다. 장바구니로 이동하시겠습니까?");
 
-            window.location.href = "/cart?orderid=aa1&ordermenu="+ordermenu+"&orderprice="+orderprice+"&orderqunt="+orderqunt+"&confirmation="+confirmation;
+            window.location.href = "/cart?menuname="+ordermenu+"&menuprice="+orderprice+"&menuqunt="+orderqunt+"&confirmation="+confirmation;
+
         }
     </script>
 </head>
@@ -45,7 +46,9 @@
                 </li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Skills</a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1"><a sec:authorize="hasRole('USER')" class="nav-link py-3 px-0 px-lg-3 rounded" href="/logout">LOGOUT</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a sec:authorize="hasRole('USER')"
+                                                     class="nav-link py-3 px-0 px-lg-3 rounded"
+                                                     href="/logout">LOGOUT</a></li>
             </ul>
         </div>
     </div>
@@ -369,21 +372,25 @@
                             <!-- 메뉴리스트-->
                             <table class="table table-borderless">
                                 <thead>
-                                    <tr>
-                                        <th>메뉴명</th>
-                                        <th>가격</th>
-                                        <th>수량</th>
-                                        <th>주문</th>
-                                    </tr>
+                                <tr>
+                                    <th>메뉴명</th>
+                                    <th>가격</th>
+                                    <th>수량</th>
+                                    <th>주문</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                 <!--- 데이터 출력 부분 -->
-                                    <tr th:each="prod : ${list}">
-                                        <td th:text="${prod.menuname}">메뉴명</td>
-                                        <td th:text="${#numbers.formatInteger(prod.menuprice, 0, 'COMMA')}">가격</td>
-                                        <td><input type="number" min="1" value="1"  style="border: none; outline: none; text-align:center;"></td>
-                                        <td><button type="button" class="btn btn-warning" onclick="cartadd(event)">담기</button></td>
-                                    </tr>
+                                <tr th:each="prod : ${list}">
+                                    <td th:text="${prod.menuname}">메뉴명</td>
+                                    <td th:text="${#numbers.formatInteger(prod.menuprice, 0, 'COMMA')}">가격</td>
+                                    <td><input type="number" min="1" value="1"
+                                               style="border: none; outline: none; text-align:center;"></td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" onclick="cartadd(event)">담기
+                                        </button>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                             <!-- 장바구니로 / 닫기 버튼-->

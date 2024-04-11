@@ -15,7 +15,7 @@
 
     <!--장바구니-->
     <select id="orderlist" parameterType="String" resultType="sqproject.mbc.vo.CoffeeVo">
-        SELECT cartid as orderid, cartmenu as ordermenu, cartprice as orderprice, SUM(cartqunt) AS orderqunt
+        SELECT cartid as orderid, cartmenu as menuname, cartprice as menuprice, SUM(cartqunt) AS menuqunt
         FROM COFFEECART
         where CARTID = #{orderid}
         GROUP BY cartid, cartmenu, cartprice

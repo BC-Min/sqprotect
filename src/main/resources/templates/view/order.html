@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Menu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+    <!--JQuery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!--iamport.payment.js-->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+    <script th:src="@{/js/payment.js}"></script>
 </head>
 <body>
-<b>유저ID : </b>
-<div sec:authorize="isAuthenticated()" sec:authentication="principal.username"></div>
+<div id="main" style="font-size: large; text-align: center;">
+    <h3><div sec:authorize="isAuthenticated()" sec:authentication="principal.username"></div>님의 주문내역</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">메뉴명</th>
+            <th scope="col">가격</th>
+            <th scope="col">수량</th>
+            <th scope="col">합계</th>
+            <th scope="col">삭제</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${list}">
+            <td th:text="${item.menuname}"></td>
+            <td th:text="${item.menuprice}"></td>
+            <td>
+                <input type="number" min="1" th:value="${item.menuqunt}" th:attr="data-price=${item.menuprice}"style="border: none; outline: none; text-align: center;">
+            </td>
+            <td><input type="text" readonly style="border: none; outline: none;"></td>
+            <td><button id="delete" type="button" class="btn btn-primary" onclick="deleteRow(event)">삭제</button></td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <button id="payment" type="button" class="btn btn-primary" onclick="paymentCof()">결제</button>
+                <input type="hidden" id="orderId" th:value="${item.orderid}">
+                <a th:href="@{index}">
+                    <button id="cancel" type="button" class="btn btn-primary">취소</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
